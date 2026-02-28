@@ -154,12 +154,11 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Mobile Hero — visible only on mobile */}
-        <div className="flex md:hidden flex-col items-center justify-center pt-24 px-2 min-h-[80vh] gap-8">
+        <div className="flex md:hidden flex-col items-center justify-center pt-24 px-4 min-h-[80vh] gap-6">
           <motion.img
             src="/images/profilepic.png"
             alt="Bhanu Teja"
-            className="w-64 h-auto rounded-3xl shadow-xl border border-gray-200 mx-auto"
+            className="w-52 h-auto rounded-3xl shadow-xl border border-gray-200 mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -168,13 +167,43 @@ export default function HomePage() {
                 "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect fill='%23111' width='256' height='256' rx='24'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='%233b82f6' font-family='monospace' font-size='64' dy='.1em'%3EBT%3C/text%3E%3C/svg%3E";
             }}
           />
-          <div className="w-full h-[400px] relative">
-            <FallingText
-              text="Hi 👋, I am Bhanu Teja Gummadavelli I Turn Ideas into Designs, and Designs into Reality."
-              highlightWords={["Bhanu", "Teja", "Designs", "Reality"]}
-              highlightClass="text-blue-600 font-bold"
-              fontSize="2rem"
-            />
+          <div className="text-center px-2">
+            <motion.p
+              className="text-sm text-blue-500 font-medium mb-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              Hi 👋, I am
+            </motion.p>
+            <motion.h1
+              className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3"
+              style={{ fontFamily: "var(--font-heading)" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <span>Bhanu Teja </span>
+              <br className="block md:hidden" />
+              <span className="text-gradient">Gummadavelli</span>
+            </motion.h1>
+            <motion.p
+              className="block md:hidden text-base text-slate-500 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              Turning ideas into digital reality.
+            </motion.p>
+            <motion.p
+              className="hidden md:block text-lg text-slate-500 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              I Turn Ideas into Designs, and Designs into Reality.
+            </motion.p>
           </div>
         </div>
       </section>
@@ -190,11 +219,11 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24"
+            className="flex flex-col items-center text-center md:items-start md:text-left lg:flex-row lg:gap-24 gap-16"
           >
             {/* LEFT — Floating typographic card */}
             <motion.div
-              className="flex-shrink-0 w-72 lg:w-80"
+              className="flex-shrink-0 w-72 lg:w-80 mx-auto md:mx-0"
               initial={{ opacity: 0, y: 30, rotate: -2 }}
               whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true }}
