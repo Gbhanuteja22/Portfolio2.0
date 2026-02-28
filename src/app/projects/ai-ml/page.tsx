@@ -188,28 +188,16 @@ function GestureArtPreview() {
 
 const projects = [
     {
-        title: "GeminiLens",
-        description: "AI-powered file analysis platform — drag & drop any document for intelligent insights, summaries, and data extraction via Google Gemini.",
-        tags: ["AI", "Gemini API", "React", "Python", "Vision"],
-        Preview: GeminiLensPreview,
-    },
-    {
-        title: "CodeStory",
-        description: "GitHub repository analyzer — paste any repo URL to generate architecture diagrams, codebase walkthroughs, and interactive code chat.",
-        tags: ["AI", "GitHub API", "React", "NLP", "Diagrams"],
-        Preview: CodeStoryPreview,
-    },
-    {
-        title: "DocuMind: RAG AI Assistant",
-        description: "Retrieval Augmented Generation system using vector databases for intelligent, context-aware document Q&A and knowledge retrieval.",
-        tags: ["LangChain", "Pinecone", "OpenAI", "Python", "RAG"],
-        Preview: DocuMindPreview,
-    },
-    {
         title: "MyChem Lab",
         description: "AI Virtual Chemistry Laboratory — interactive 3D experiments with intelligent reaction predictions and simulated lab environment.",
         tags: ["React", "Three.js", "AI", "EdTech", "3D"],
         Preview: MyChemLabPreview,
+    },
+    {
+        title: "GestureArt",
+        description: "Hand gesture-based system using computer vision — real-time webcam gesture detection with MediaPipe for hands-free interaction.",
+        tags: ["Computer Vision", "ML", "Python", "OpenCV", "MediaPipe"],
+        Preview: GestureArtPreview,
     },
     {
         title: "VisionTrack: Smart Attendance",
@@ -218,18 +206,32 @@ const projects = [
         Preview: VisionTrackPreview,
     },
     {
+        title: "DocuMind: RAG AI Assistant",
+        description: "Retrieval Augmented Generation system using vector databases for intelligent, context-aware document Q&A and knowledge retrieval.",
+        tags: ["LangChain", "Pinecone", "OpenAI", "Python", "RAG"],
+        Preview: DocuMindPreview,
+    },
+    {
+        title: "CodeStory",
+        description: "GitHub repository analyzer — paste any repo URL to generate architecture diagrams, codebase walkthroughs, and interactive code chat.",
+        tags: ["AI", "GitHub API", "React", "NLP", "Diagrams"],
+        Preview: CodeStoryPreview,
+    },
+    {
+        title: "GeminiLens",
+        description: "AI-powered file analysis platform — drag & drop any document for intelligent insights, summaries, and data extraction via Google Gemini.",
+        tags: ["AI", "Gemini API", "React", "Python", "Vision"],
+        Preview: GeminiLensPreview,
+    },
+    {
         title: "WhatsApp Chat Analyzer",
         description: "Data analysis and visualization from exported WhatsApp chats — message frequency, word clouds, activity maps, and sentiment trends.",
         tags: ["Python", "Pandas", "NLP", "Matplotlib", "Streamlit"],
         Preview: WhatsAppAnalyzerPreview,
     },
-    {
-        title: "GestureArt",
-        description: "Hand gesture-based system using computer vision — real-time webcam gesture detection with MediaPipe for hands-free interaction.",
-        tags: ["Computer Vision", "ML", "Python", "OpenCV", "MediaPipe"],
-        Preview: GestureArtPreview,
-    },
 ];
+
+
 
 const badgePositions = [
     { top: "14%", left: "10%" },

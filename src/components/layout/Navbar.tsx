@@ -145,29 +145,6 @@ export default function Navbar() {
                                 </button>
                             );
                         })}
-
-                        {/* Resume — gradient border + glow */}
-                        <a
-                            href="/Gummadavelli Bhanu Teja Resume.pdf"
-                            download="Gummadavelli Bhanu Teja Resume"
-                            className="relative group/resume ml-2 rounded-full p-[1px] overflow-hidden cursor-pointer"
-                            style={{
-                                background: "linear-gradient(135deg, rgba(37,99,235,0.4), rgba(124,58,237,0.4), rgba(37,99,235,0.3))",
-                            }}
-                        >
-                            <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[11px] font-medium
-                                bg-white text-slate-600 group-hover/resume:text-blue-600 transition-all duration-300
-                                group-hover/resume:shadow-[0_0_20px_rgba(37,99,235,0.15)]"
-                                style={{ fontFamily: "var(--font-mono)", backdropFilter: "blur(8px)" }}
-                            >
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                Resume
-                            </div>
-                        </a>
                     </div>
 
                     {/* Command Palette trigger ONLY — dialog is at layout root */}

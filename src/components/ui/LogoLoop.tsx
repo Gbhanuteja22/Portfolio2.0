@@ -192,6 +192,8 @@ function LogoLoopInner({
                 ref={trackRef}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onTouchStart={() => setIsHovered(true)}
+                onTouchEnd={() => setIsHovered(false)}
             >
                 {lists}
             </div>

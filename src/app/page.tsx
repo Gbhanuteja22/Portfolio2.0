@@ -12,6 +12,9 @@ import LogoLoop from "@/components/ui/LogoLoop";
 import ProjectFolder from "@/components/ui/ProjectFolder";
 import SkillsBento from "@/components/ui/SkillsBento";
 import { SiLinkedin, SiGithub } from "react-icons/si";
+import dynamic from "next/dynamic";
+
+const FallingText = dynamic(() => import("@/components/ui/FallingText"), { ssr: false });
 import { HiOutlineMail } from "react-icons/hi";
 
 /* ── Project data ── */
@@ -119,10 +122,11 @@ export default function HomePage() {
       {/* ─── HERO — comfortable spacing below header ─── */}
       <section
         id="home"
-        className="relative z-10 min-h-screen flex items-start px-8 sm:px-12 md:px-20 lg:px-28 pt-28 pb-12"
+        className="relative z-10 min-h-screen px-8 sm:px-12 md:px-20 lg:px-28 pt-28 pb-12"
       >
-        <div className="w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-start gap-8 md:gap-6 lg:gap-12 mt-4">
-          {/* LEFT — Dynamic Greeting — wider to fill space */}
+        {/* Desktop Hero — hidden on mobile */}
+        <div className="hidden md:flex w-full max-w-7xl mx-auto flex-row items-start gap-6 lg:gap-12 mt-4">
+          {/* LEFT — Dynamic Greeting */}
           <div className="w-full md:w-[60%] lg:w-[62%] flex flex-col justify-start py-2 mt-8">
             <AnimatePresence mode="wait">
               {!isDesigner ? (
@@ -137,7 +141,7 @@ export default function HomePage() {
             </AnimatePresence>
           </div>
 
-          {/* RIGHT — Physics ID Card — pulled up to anchor lanyard to header */}
+          {/* RIGHT — Physics ID Card */}
           <div className="w-full md:w-[40%] lg:w-[38%] flex justify-center -mt-24 relative z-[60]">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -147,6 +151,30 @@ export default function HomePage() {
             >
               <PhysicsIDCard onFlipChange={handleFlip} />
             </motion.div>
+          </div>
+        </div>
+
+        {/* Mobile Hero — visible only on mobile */}
+        <div className="flex md:hidden flex-col items-center justify-center pt-24 px-2 min-h-[80vh] gap-8">
+          <motion.img
+            src="/images/profilepic.png"
+            alt="Bhanu Teja"
+            className="w-64 h-auto rounded-3xl shadow-xl border border-gray-200 mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            onError={(e) => {
+              (e.target as HTMLImageElement).src =
+                "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect fill='%23111' width='256' height='256' rx='24'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='%233b82f6' font-family='monospace' font-size='64' dy='.1em'%3EBT%3C/text%3E%3C/svg%3E";
+            }}
+          />
+          <div className="w-full h-[400px] relative">
+            <FallingText
+              text="Hi 👋, I am Bhanu Teja Gummadavelli I Turn Ideas into Designs, and Designs into Reality."
+              highlightWords={["Bhanu", "Teja", "Designs", "Reality"]}
+              highlightClass="text-blue-600 font-bold"
+              fontSize="2rem"
+            />
           </div>
         </div>
       </section>
@@ -238,7 +266,7 @@ export default function HomePage() {
               <Link
                 href="/achievements"
                 className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl text-sm font-medium
-                  bg-white/[0.06] border border-white/[0.1] text-white/60 hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all"
+                  bg-white/[0.06] border-2 border-blue-500/50 text-white/70 hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/80 transition-all ring-1 ring-white/10"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 Explore My Work
@@ -255,15 +283,49 @@ export default function HomePage() {
         className="relative z-10 min-h-screen flex flex-col justify-center px-8 sm:px-12 md:px-20 lg:px-28 py-24"
       >
         <div className="max-w-6xl mx-auto w-full">
-          {/* All 4 elements as siblings in a single grid row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-items-center">
-            {/* Projects Title — first grid cell */}
+          {/* ── Mobile: stacked vertically ── */}
+          <div className="flex md:hidden flex-col items-center gap-10 w-full">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl font-bold text-center"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              <span className="text-gradient">Projects</span>
+            </motion.h2>
+
+            <div className="flex flex-col items-center gap-10 w-full">
+              <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+                <div className="flex flex-col items-center gap-4">
+                  <ProjectFolder title="AI & ML Projects" count={aiProjects.length} color="#3b82f6" href="/projects/ai-ml" icon="" />
+                  <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>AI & ML Projects</p>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <div className="flex flex-col items-center gap-4">
+                  <ProjectFolder title="Full Stack Projects" count={fullStackProjects.length} color="#8b5cf6" href="/projects/full-stack" icon="" />
+                  <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>Full Stack Projects</p>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
+                <div className="flex flex-col items-center gap-4">
+                  <ProjectFolder title="Blockchain Projects" count={blockchainProjects.length} color="#10b981" href="/projects/blockchain" icon="" />
+                  <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>Blockchain Projects</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* ── Desktop: title left, folders right in one row ── */}
+          <div className="hidden md:flex w-full items-center justify-between gap-12 px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex items-center justify-center lg:justify-start w-full"
+              className="flex-shrink-0 md:pl-12 lg:pl-24"
             >
               <h2
                 className="text-3xl md:text-4xl font-bold"
@@ -273,29 +335,26 @@ export default function HomePage() {
               </h2>
             </motion.div>
 
-            {/* AI & ML Folder */}
-            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
-              <div className="flex flex-col items-center gap-4">
-                <ProjectFolder title="AI & ML Projects" count={aiProjects.length} color="#3b82f6" href="/projects/ai-ml" icon="" />
-                <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>AI & ML Projects</p>
-              </div>
-            </motion.div>
-
-            {/* Full Stack Folder */}
-            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="flex flex-col items-center gap-4">
-                <ProjectFolder title="Full Stack Projects" count={fullStackProjects.length} color="#8b5cf6" href="/projects/full-stack" icon="" />
-                <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>Full Stack Projects</p>
-              </div>
-            </motion.div>
-
-            {/* Blockchain Folder */}
-            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
-              <div className="flex flex-col items-center gap-4">
-                <ProjectFolder title="Blockchain Projects" count={blockchainProjects.length} color="#10b981" href="/projects/blockchain" icon="" />
-                <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>Blockchain Projects</p>
-              </div>
-            </motion.div>
+            <div className="flex items-center gap-8">
+              <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+                <div className="flex flex-col items-center gap-4">
+                  <ProjectFolder title="AI & ML Projects" count={aiProjects.length} color="#3b82f6" href="/projects/ai-ml" icon="" />
+                  <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>AI & ML Projects</p>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
+                <div className="flex flex-col items-center gap-4">
+                  <ProjectFolder title="Full Stack Projects" count={fullStackProjects.length} color="#8b5cf6" href="/projects/full-stack" icon="" />
+                  <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>Full Stack Projects</p>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
+                <div className="flex flex-col items-center gap-4">
+                  <ProjectFolder title="Blockchain Projects" count={blockchainProjects.length} color="#10b981" href="/projects/blockchain" icon="" />
+                  <p className="text-sm font-semibold text-slate-500 mt-2" style={{ fontFamily: "var(--font-heading)" }}>Blockchain Projects</p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -388,6 +447,25 @@ export default function HomePage() {
                   <span className="ml-4 text-slate-200 group-hover:text-slate-500 transition-colors">↗</span>
                 </motion.a>
               </div>
+
+              {/* Download Resume — premium styling */}
+              <motion.a
+                href="/Gummadavelli Bhanu Teja Resume.pdf"
+                download="Gummadavelli Bhanu Teja Resume"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold text-white
+                    bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700
+                    shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 mt-6"
+                style={{ fontFamily: "var(--font-heading)" }}
+                whileHover={{ y: -3, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download Resume
+              </motion.a>
             </motion.div>
 
             {/* RIGHT — Say Hello card only */}
@@ -417,12 +495,21 @@ export default function HomePage() {
                 <div className="flex items-center gap-3 w-full">
                   <a
                     href="mailto:bhanutejagummadevelli@gmail.com"
+                    onClick={(e) => {
+                      if (window.innerWidth < 640) {
+                        e.preventDefault();
+                        navigator.clipboard.writeText("bhanutejagummadevelli@gmail.com");
+                        setCopied(true);
+                        setTimeout(() => setCopied(false), 2000);
+                      }
+                    }}
                     className="flex-1 flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-medium text-sm
                       bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-blue-light)] transition-colors shadow-lg shadow-[var(--accent-blue)]/20"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
                     <HiOutlineMail className="text-lg" />
-                    bhanutejagummadevelli@gmail.com
+                    <span className="hidden sm:inline">bhanutejagummadevelli@gmail.com</span>
+                    <span className="sm:hidden">Copy Email</span>
                   </a>
                   <button
                     onClick={copyEmail}

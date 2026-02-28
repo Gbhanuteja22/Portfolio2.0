@@ -156,22 +156,16 @@ function EdutubePreview() {
 
 const projects = [
     {
+        title: "Edutube",
+        description: "Educational content and video platform — curated courses, progress tracking, and community-driven learning resources.",
+        tags: ["React", "MongoDB", "YouTube API", "EdTech", "Search"],
+        Preview: EdutubePreview,
+    },
+    {
         title: "Placement Management System",
         description: "Student-company placement workflow — dashboards, company listings, interview scheduling, and real-time placement analytics.",
         tags: ["Next.js", "MongoDB", "Node.js", "Dashboard", "Analytics"],
         Preview: PlacementPreview,
-    },
-    {
-        title: "MediSync",
-        description: "Smart Doctor appointment & record system — patient scheduling, prescription management, and consultation tracking.",
-        tags: ["React", "Firebase", "Node.js", "Healthcare", "Auth"],
-        Preview: MediSyncPreview,
-    },
-    {
-        title: "SwiftShare: P2P File Transfer",
-        description: "Real-time file transfer platform — share via generated links or access codes with end-to-end encryption.",
-        tags: ["Next.js", "S3", "WebSockets", "Encryption", "Auth"],
-        Preview: SwiftSharePreview,
     },
     {
         title: "Smart Study Planner",
@@ -186,10 +180,16 @@ const projects = [
         Preview: VoiceSearchPreview,
     },
     {
-        title: "Edutube",
-        description: "Educational content and video platform — curated courses, progress tracking, and community-driven learning resources.",
-        tags: ["React", "MongoDB", "YouTube API", "EdTech", "Search"],
-        Preview: EdutubePreview,
+        title: "MediSync",
+        description: "Smart Doctor appointment & record system — patient scheduling, prescription management, and consultation tracking.",
+        tags: ["React", "Firebase", "Node.js", "Healthcare", "Auth"],
+        Preview: MediSyncPreview,
+    },
+    {
+        title: "SwiftShare: P2P File Transfer",
+        description: "Real-time file transfer platform — share via generated links or access codes with end-to-end encryption.",
+        tags: ["Next.js", "S3", "WebSockets", "Encryption", "Auth"],
+        Preview: SwiftSharePreview,
     },
 ];
 

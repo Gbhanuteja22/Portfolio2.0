@@ -30,7 +30,7 @@ export default function ProjectFolder({ title, count, color, href, size = 1.5 }:
 
     return (
         <Link href={href} className="block group cursor-pointer" style={{ textDecoration: "none" }}>
-            <div className="flex flex-col items-center gap-6">
+            <div style={{ width: `${100 * size}px`, height: `${90 * size}px`, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
                 <div style={{ transform: `scale(${size})`, transformOrigin: "bottom center" }}>
                     <div className="folder" style={folderStyle}>
                         <div className="folder__back">

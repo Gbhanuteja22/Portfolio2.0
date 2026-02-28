@@ -264,7 +264,7 @@ export default function AchievementsPage() {
                                             {exp.impact.map((line) => (
                                                 <li
                                                     key={line}
-                                                    className="text-[13px] text-slate-400 leading-relaxed flex items-start gap-2"
+                                                    className="text-[13px] text-slate-400 leading-relaxed flex items-start gap-2 text-justify md:text-left"
                                                 >
                                                     <span className="text-[var(--accent-blue)] mt-0.5 text-[10px]">
                                                         ▸
@@ -399,7 +399,7 @@ export default function AchievementsPage() {
                                                 highlight={ach.highlight}
                                             />
                                         </h3>
-                                        <p className="text-[13px] text-slate-400 leading-relaxed group-hover:text-slate-500 transition-colors">
+                                        <p className="text-[13px] text-slate-400 leading-relaxed group-hover:text-slate-500 transition-colors text-justify md:text-left">
                                             {ach.description}
                                         </p>
                                     </div>

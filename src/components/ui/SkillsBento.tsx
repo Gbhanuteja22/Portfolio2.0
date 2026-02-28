@@ -122,7 +122,7 @@ function BentoCard({ card, index }: { card: ToolboxCard; index: number }) {
                     group-hover:border-white/[0.15] group-hover:shadow-xl"
                 style={{
                     background: card.gradient,
-                    backgroundColor: "rgba(18, 18, 24, 0.85)",
+                    backgroundColor: "rgba(38, 38, 48, 0.92)",
                     backdropFilter: "blur(16px) saturate(1.4)",
                     WebkitBackdropFilter: "blur(16px) saturate(1.4)",
                 }}
