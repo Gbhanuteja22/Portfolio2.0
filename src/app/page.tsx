@@ -383,7 +383,7 @@ export default function HomePage() {
                   <SiLinkedin className="text-2xl text-slate-400 group-hover:text-[#0A66C2] transition-colors" />
                   <div>
                     <p className="text-sm font-semibold text-slate-700 group-hover:text-slate-900 transition-colors" style={{ fontFamily: "var(--font-heading)" }}>LinkedIn</p>
-                    <p className="text-[11px] text-slate-300" style={{ fontFamily: "var(--font-mono)" }}>Connect</p>
+                    <p className="text-[11px] text-slate-300" style={{ fontFamily: "var(--font-mono)" }}>@bhanuteja-gummadevelli</p>
                   </div>
                   <span className="ml-4 text-slate-200 group-hover:text-slate-500 transition-colors">↗</span>
                 </motion.a>
