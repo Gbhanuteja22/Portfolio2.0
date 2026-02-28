@@ -101,6 +101,19 @@ export default function PhysicsIDCard({ onFlipChange }: PhysicsIDCardProps) {
         setFlipped(f => !f);
     }, []);
 
+    // ── Double-tap to flip (mobile) ──
+    const lastTapRef = useRef(0);
+    const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+        const now = Date.now();
+        if (now - lastTapRef.current < 300) {
+            e.preventDefault();
+            setFlipped(f => !f);
+            lastTapRef.current = 0;
+        } else {
+            lastTapRef.current = now;
+        }
+    }, []);
+
     /* ── Rope SVG path ── */
     const [stringPath, setStringPath] = useState("");
 
@@ -188,6 +201,7 @@ export default function PhysicsIDCard({ onFlipChange }: PhysicsIDCardProps) {
                 <div
                     {...bind()}
                     onDoubleClick={handleDoubleClick}
+                    onTouchEnd={handleTouchEnd}
                     className="absolute cursor-grab active:cursor-grabbing touch-none select-none"
                     style={{ width: CARD_WIDTH, height: CARD_HEIGHT, top: PIN_H, left: 0, perspective: 1200 }}
                 >

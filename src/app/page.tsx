@@ -14,7 +14,7 @@ import SkillsBento from "@/components/ui/SkillsBento";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import dynamic from "next/dynamic";
 
-const FallingText = dynamic(() => import("@/components/ui/FallingText"), { ssr: false });
+const MobileHeroText = dynamic(() => import("@/components/ui/MobileHeroText"), { ssr: false });
 import { HiOutlineMail } from "react-icons/hi";
 
 /* ── Project data ── */
@@ -154,57 +154,29 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="flex md:hidden flex-col items-center justify-center pt-24 px-4 min-h-[80vh] gap-6">
-          <motion.img
-            src="/images/profilepic.png"
-            alt="Bhanu Teja"
-            className="w-52 h-auto rounded-3xl shadow-xl border border-gray-200 mx-auto"
+        <div className="flex md:hidden flex-col items-center justify-start pt-10 px-4 gap-6">
+          <motion.div
+            className="relative p-2 rounded-3xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 shadow-[0_0_40px_rgba(59,130,246,0.2)] backdrop-blur-sm border border-white/10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            onError={(e) => {
-              (e.target as HTMLImageElement).src =
-                "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect fill='%23111' width='256' height='256' rx='24'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='%233b82f6' font-family='monospace' font-size='64' dy='.1em'%3EBT%3C/text%3E%3C/svg%3E";
-            }}
+          >
+            <img
+              src="/images/profilepic.png"
+              alt="Bhanu Teja"
+              className="w-56 h-auto rounded-2xl object-cover shadow-inner"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect fill='%23111' width='256' height='256' rx='24'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='%233b82f6' font-family='monospace' font-size='64' dy='.1em'%3EBT%3C/text%3E%3C/svg%3E";
+              }}
+            />
+          </motion.div>
+          <MobileHeroText
+            greeting="Hi 👋🏻, I am"
+            name="Bhanu Teja"
+            lastName="Gummadavelli"
+            subtitle="Turning ideas into digital reality."
           />
-          <div className="text-center px-2">
-            <motion.p
-              className="text-sm text-blue-500 font-medium mb-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
-              Hi 👋, I am
-            </motion.p>
-            <motion.h1
-              className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3"
-              style={{ fontFamily: "var(--font-heading)" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              <span>Bhanu Teja </span>
-              <br className="block md:hidden" />
-              <span className="text-gradient">Gummadavelli</span>
-            </motion.h1>
-            <motion.p
-              className="block md:hidden text-base text-slate-500 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              Turning ideas into digital reality.
-            </motion.p>
-            <motion.p
-              className="hidden md:block text-lg text-slate-500 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              I Turn Ideas into Designs, and Designs into Reality.
-            </motion.p>
-          </div>
         </div>
       </section>
 
@@ -389,7 +361,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── LOGO LOOP — between Projects and Technical Arsenal ─── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 py-8 bg-black">
+      <div className="relative z-10 w-full overflow-hidden py-8 bg-black">
         <LogoLoop logos={allSkillLogos} speed={60} logoHeight={64} gap={64} />
       </div>
 

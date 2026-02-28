@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import ParticleBackground from "@/components/effects/ParticleBackground";
+import CodingProfile from "@/components/ui/CodingProfile";
 
 /* ── Experience Data ── */
 const experiences = [
@@ -416,6 +417,26 @@ export default function AchievementsPage() {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* ════════════════════════════════════════════════
+          CODING PROFILE — LeetCode Heatmap & Codolio
+      ════════════════════════════════════════════════ */}
+            <section className="relative z-10 px-8 sm:px-12 md:px-20 lg:px-28 pb-28">
+                <div className="max-w-5xl mx-auto">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-2xl md:text-3xl font-bold mb-14"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                        <span className="text-gradient">Coding Profile</span>
+                    </motion.h2>
+
+                    <CodingProfile />
                 </div>
             </section>
         </>
