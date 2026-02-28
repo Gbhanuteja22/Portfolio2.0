@@ -12,9 +12,8 @@ import LogoLoop from "@/components/ui/LogoLoop";
 import ProjectFolder from "@/components/ui/ProjectFolder";
 import SkillsBento from "@/components/ui/SkillsBento";
 import { SiLinkedin, SiGithub } from "react-icons/si";
-import dynamic from "next/dynamic";
 
-const MobileHeroText = dynamic(() => import("@/components/ui/MobileHeroText"), { ssr: false });
+
 import { HiOutlineMail } from "react-icons/hi";
 
 /* ── Project data ── */
@@ -171,12 +170,36 @@ export default function HomePage() {
               }}
             />
           </motion.div>
-          <MobileHeroText
-            greeting="Hi 👋🏻, I am"
-            name="Bhanu Teja"
-            lastName="Gummadavelli"
-            subtitle="Turning ideas into digital reality."
-          />
+          <div className="text-center px-2">
+            <motion.p
+              className="text-sm text-blue-500 font-medium mb-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              Hi 👋🏻, I am
+            </motion.p>
+            <motion.h1
+              className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3"
+              style={{ fontFamily: "var(--font-heading)" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              Bhanu Teja{" "}
+              <br className="block md:hidden" />
+              <span className="text-gradient">Gummadavelli</span>
+            </motion.h1>
+            <motion.p
+              className="text-base text-slate-500 leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              Turning ideas into digital reality.
+            </motion.p>
+          </div>
         </div>
       </section>
 
