@@ -524,21 +524,13 @@ export default function HomePage() {
                 <div className="flex items-center gap-3 w-full">
                   <a
                     href="mailto:bhanutejagummadevelli@gmail.com"
-                    onClick={(e) => {
-                      if (window.innerWidth < 640) {
-                        e.preventDefault();
-                        navigator.clipboard.writeText("bhanutejagummadevelli@gmail.com");
-                        setCopied(true);
-                        setTimeout(() => setCopied(false), 2000);
-                      }
-                    }}
                     className="flex-1 flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-medium text-sm
                       bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-blue-light)] transition-colors shadow-lg shadow-[var(--accent-blue)]/20"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
                     <HiOutlineMail className="text-lg" />
                     <span className="hidden sm:inline">bhanutejagummadevelli@gmail.com</span>
-                    <span className="sm:hidden">Copy Email</span>
+                    <span className="sm:hidden">Send a Message</span>
                   </a>
                   <button
                     onClick={copyEmail}

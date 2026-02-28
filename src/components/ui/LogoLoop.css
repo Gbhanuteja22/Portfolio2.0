@@ -58,6 +58,17 @@
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Responsive: smaller logos & gap on mobile */
+@media (max-width: 767px) {
+    .logoloop__item {
+        margin-right: calc(var(--logoloop-gap) * 0.6);
+    }
+
+    .logoloop__item img {
+        height: calc(var(--logoloop-logoHeight) * 0.55);
+    }
+}
+
 .logoloop--scale-hover .logoloop__item {
     overflow: visible;
 }
