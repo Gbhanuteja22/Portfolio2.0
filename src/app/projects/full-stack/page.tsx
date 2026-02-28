@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import ContainerScroll from "@/components/ui/ContainerScroll";
 
 /* ── Clean UI Mockup Previews (MediSync-style) ── */
@@ -9,7 +10,7 @@ import ContainerScroll from "@/components/ui/ContainerScroll";
 function PlacementPreview() {
     return (
         <div className="w-full h-full bg-gradient-to-br from-purple-50 to-pink-50 relative overflow-hidden">
-            <img src="/projects/placement-system.jpg" alt="Placement System" className="absolute inset-0 w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+            <Image src="/projects/placement-system.jpg" alt="Placement System" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" />
         </div>
     );
 }
@@ -17,7 +18,7 @@ function PlacementPreview() {
 function MediSyncPreview() {
     return (
         <div className="w-full h-full bg-gradient-to-br from-rose-50 to-red-50 relative overflow-hidden">
-            <img src="/projects/medisync.jpg" alt="MediSync" className="absolute inset-0 w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+            <Image src="/projects/medisync.jpg" alt="MediSync" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" />
         </div>
     );
 }

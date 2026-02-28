@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import ContainerScroll from "@/components/ui/ContainerScroll";
 
 /* ── Clean UI Mockup Previews (MediSync-style: pastel bg, rounded cards, soft shadows) ── */
@@ -93,7 +94,7 @@ function DocuMindPreview() {
 function MyChemLabPreview() {
     return (
         <div className="w-full h-full bg-gradient-to-br from-emerald-50 to-teal-50 relative overflow-hidden">
-            <img src="/projects/mychemlab.jpg" alt="MyChem Lab" className="absolute inset-0 w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+            <Image src="/projects/mychemlab.jpg" alt="MyChem Lab" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" />
         </div>
     );
 }
