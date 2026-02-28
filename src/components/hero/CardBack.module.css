@@ -1,0 +1,107 @@
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(155deg, #0a0a0a 0%, #111111 40%, #0d0d0d 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.patterns {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.geoShape {
+    position: absolute;
+    border: 1px solid rgba(45, 212, 191, 0.1);
+    border-radius: 4px;
+    transform: rotate(45deg);
+    animation: float-geo 8s ease-in-out infinite;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.branding {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(45, 212, 191, 0.25);
+    letter-spacing: -0.02em;
+}
+
+.profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    gap: 12px;
+}
+
+.avatarWrapper {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.avatarGlow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(45, 212, 191, 0.08);
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.06);
+}
+
+.name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f0f4f8;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logoMark {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: rgba(45, 212, 191, 0.1);
+    letter-spacing: -0.02em;
+}
+
+@keyframes float-geo {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(45deg) translateY(-8px);
+    }
+}

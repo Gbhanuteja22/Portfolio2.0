@@ -1,0 +1,110 @@
+.folder-wrapper {
+    display: inline-block;
+}
+
+.folder {
+    transition: transform 0.2s ease-in;
+    cursor: pointer;
+    position: relative;
+}
+
+.folder:hover {
+    transform: translateY(-8px);
+}
+
+/* On hover: front flap opens */
+.folder:hover .folder__front {
+    transform: skew(15deg) scaleY(0.6);
+}
+
+/* Back panel with tab — dark theme */
+.folder__back {
+    position: relative;
+    width: 100px;
+    height: 80px;
+    background: var(--folder-back-color);
+    border-radius: 0px 10px 10px 10px;
+    z-index: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.folder__back::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    bottom: 98%;
+    left: 0;
+    width: 30px;
+    height: 10px;
+    background: var(--folder-back-color);
+    border-radius: 5px 5px 0 0;
+}
+
+/* Papers — naturally layered file tabs inside folder */
+.paper {
+    position: absolute;
+    z-index: 2;
+    bottom: 12%;
+    left: 50%;
+    width: 60%;
+    height: 65%;
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 3px;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, 15%);
+}
+
+/* Default resting: overlapping, slightly offset */
+.paper.paper-1 {
+    z-index: 4;
+    transform: translate(-50%, 12%) rotate(-2deg);
+}
+
+.paper.paper-2 {
+    z-index: 3;
+    width: 55%;
+    height: 60%;
+    background: rgba(230, 235, 245, 0.85);
+    transform: translate(-50%, 10%) rotate(0deg);
+}
+
+.paper.paper-3 {
+    z-index: 2;
+    width: 50%;
+    height: 55%;
+    background: rgba(215, 222, 235, 0.80);
+    transform: translate(-50%, 8%) rotate(2deg);
+}
+
+/* Hover: papers fan out organically with rotation + offset */
+.folder:hover .paper {
+    opacity: 1;
+}
+
+.folder:hover .paper.paper-1 {
+    transform: translate(-75%, -30%) rotate(-8deg);
+}
+
+.folder:hover .paper.paper-2 {
+    transform: translate(-50%, -45%) rotate(0deg);
+}
+
+.folder:hover .paper.paper-3 {
+    transform: translate(-25%, -30%) rotate(8deg);
+}
+
+/* Single intact front flap — dark theme */
+.folder__front {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background: var(--folder-color);
+    border-radius: 5px 10px 10px 10px;
+    transform-origin: bottom;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}

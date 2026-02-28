@@ -1,0 +1,40 @@
+Logos Needed for Portfolio Website
+====================================
+Place the following logo files in /public/logos/.
+SVG format is recommended. PNG is also accepted.
+
+CATEGORY ICONS (for SkillsBento headers, 22x22)
+-------------------------------------------------
+ai.svg
+fullstack.svg
+devops.svg
+design.svg
+
+SKILL LOGOS (for SkillsBento pills + LogoLoop)
+----------------------------------------------
+python.svg
+java.svg
+c.svg
+nodejs.svg
+express.svg
+react.svg
+api.svg
+html5.svg
+css3.svg
+javascript.svg
+sql.svg
+mongodb.svg
+azure.svg
+github.svg
+tableau.svg
+powerbi.svg
+vscode.svg
+figma.svg
+tensorflow.svg
+opencv.svg
+mediapipe.svg
+scikit-learn.svg
+pandas.svg
+matplotlib.svg
+
+TOTAL: 28 files (4 category + 24 skill)

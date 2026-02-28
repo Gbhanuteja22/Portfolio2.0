@@ -1,0 +1,110 @@
+.loader {
+    --s: 100px;
+    --_d: calc(0.353 * var(--s));
+    width: calc(var(--s) + var(--_d));
+    aspect-ratio: 0.866;
+    display: grid;
+    margin: auto;
+}
+
+.loader .box {
+    grid-area: 1/1;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_s, 1));
+    animation: loader-anim 2s infinite linear;
+}
+
+.loader .box:nth-child(1) {
+    --_x: calc(-1 * var(--_d));
+    --_y: var(--_d);
+}
+
+.loader .box:nth-child(2) {
+    --_x: var(--_d);
+    --_y: var(--_d);
+}
+
+.loader .box:nth-child(3) {
+    --_x: 0;
+    --_y: 0;
+}
+
+.loader .box:nth-child(4) {
+    --_x: 0;
+    --_y: calc(2 * var(--_d));
+}
+
+.loader .side-left {
+    grid-area: 1/1;
+    clip-path: polygon(50% 0, 0 100%, 50% 100%);
+    background: #3b82f6;
+}
+
+.loader .side-right {
+    grid-area: 1/1;
+    clip-path: polygon(50% 0, 50% 100%, 100% 100%);
+    background: #60a5fa;
+}
+
+.loader .side-top {
+    grid-area: 1/1;
+    clip-path: polygon(0 0, 100% 0, 50% 50%);
+    background: #93c5fd;
+}
+
+.loader .box {
+    display: grid;
+}
+
+@keyframes loader-anim {
+
+    0%,
+    9% {
+        --_s: 1;
+    }
+
+    10%,
+    19% {
+        --_s: 0.6;
+    }
+
+    20%,
+    29% {
+        --_s: 1;
+    }
+
+    30%,
+    39% {
+        --_s: 0.6;
+    }
+
+    40%,
+    49% {
+        --_s: 1;
+    }
+
+    50%,
+    59% {
+        --_s: 0.6;
+    }
+
+    60%,
+    69% {
+        --_s: 1;
+    }
+
+    70%,
+    79% {
+        --_s: 0.6;
+    }
+
+    80%,
+    89% {
+        --_s: 1;
+    }
+
+    90%,
+    100% {
+        --_s: 0.6;
+    }
+}
