@@ -51,9 +51,7 @@ export function CommandPaletteTrigger() {
                 type="button"
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); setOpen(true); }}
                 onMouseDown={(e) => e.preventDefault()}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] text-slate-400 hover:text-slate-700
-                    bg-white border border-gray-200 hover:border-gray-300 transition-all cursor-pointer
-                    select-none outline-none focus:outline-none focus:ring-0 active:bg-white"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] text-slate-400 hover:text-slate-700 bg-white border border-gray-200 hover:border-gray-300 transition-all cursor-pointer select-none outline-none focus:outline-none focus:ring-0 active:bg-white"
                 style={{ fontFamily: "var(--font-mono)", WebkitTapHighlightColor: 'transparent' }}
             >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50">

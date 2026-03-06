@@ -53,8 +53,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={s.label}
-                                    className="w-9 h-9 rounded-full border border-white/[0.1] bg-white/[0.05] flex items-center justify-center
-                    text-white/40 hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all duration-200"
+                                    className="w-9 h-9 rounded-full border border-white/[0.1] bg-white/[0.05] flex items-center justify-center text-white/40 hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/30 transition-all duration-200"
                                 >
                                     <span className="text-sm">{s.icon}</span>
                                 </a>

@@ -13,6 +13,16 @@ const experiences = [
         active: true,
         impact: [
             "Actively contributing to the Technical Operations Center, streamlining infrastructure, and optimizing enterprise-level technical workflows.",
+            "Supporting real-time monitoring and resolution of critical system operations across distributed environments.",
+        ],
+    },
+    {
+        role: "Intern",
+        company: "HCLTech",
+        active: false,
+        impact: [
+            "Developed an 'Image To Text Generation And Analysis Platform' during the internship tenure.",
+            "Successfully completed the project by demonstrating the functional working model directly to HCLTech Subject Matter Experts (SMEs).",
         ],
     },
     {
@@ -22,7 +32,6 @@ const experiences = [
         impact: [
             "Architected 10+ scalable workflows leveraging Apex, Lightning Components, and Flow for complex enterprise CRM environments.",
             "Engineered automation for critical lifecycle tasks, significantly reducing manual overhead and boosting record-handling efficiency.",
-            "Collaborated within cross-functional pods to deploy enterprise-ready solutions and master large-scale system design.",
         ],
     },
 ];
@@ -197,7 +206,7 @@ export default function AchievementsPage() {
                         <div className="space-y-10">
                             {experiences.map((exp, i) => (
                                 <motion.div
-                                    key={exp.role}
+                                    key={exp.company}
                                     custom={i}
                                     initial="hidden"
                                     whileInView="visible"
@@ -207,34 +216,22 @@ export default function AchievementsPage() {
                                 >
                                     {/* Dot */}
                                     <span
-                                        className="absolute left-0 md:left-1 top-2 w-[22px] h-[22px] rounded-full border-2 flex items-center justify-center"
-                                        style={{
-                                            borderColor: exp.active
-                                                ? "var(--accent-blue)"
-                                                : "rgba(255,255,255,0.12)",
-                                            background: "var(--bg-primary)",
-                                        }}
+                                        className={`absolute left-0 md:left-1 top-2 w-[22px] h-[22px] rounded-full border-2 flex items-center justify-center bg-[var(--bg-primary)] ${exp.active
+                                            ? "border-[var(--accent-blue)]"
+                                            : "border-white/[0.12]"
+                                            }`}
                                     >
                                         <span
-                                            className="block w-2.5 h-2.5 rounded-full"
-                                            style={{
-                                                background: exp.active
-                                                    ? "var(--accent-gradient)"
-                                                    : "rgba(255,255,255,0.15)",
-                                                boxShadow: exp.active
-                                                    ? "0 0 10px rgba(59,130,246,0.5)"
-                                                    : "none",
-                                            }}
+                                            className={`block w-2.5 h-2.5 rounded-full ${exp.active
+                                                ? "bg-gradient-to-r from-blue-500 to-indigo-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+                                                : "bg-white/[0.15]"
+                                                }`}
                                         />
                                     </span>
 
                                     {/* Card */}
                                     <div
-                                        className="rounded-2xl p-6 md:p-8 border border-black/[0.06] hover:border-blue-200 transition-all duration-300"
-                                        style={{
-                                            backgroundColor: "white",
-                                            boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-                                        }}
+                                        className="rounded-2xl p-6 md:p-8 border border-black/[0.06] hover:border-blue-200 transition-all duration-300 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
                                     >
                                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                                             <div>
@@ -307,11 +304,7 @@ export default function AchievementsPage() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                                 variants={fadeUp}
-                                className="rounded-2xl p-6 md:p-8 border border-black/[0.06] hover:border-blue-200 transition-all duration-300"
-                                style={{
-                                    backgroundColor: "white",
-                                    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-                                }}
+                                className="rounded-2xl p-6 md:p-8 border border-black/[0.06] hover:border-blue-200 transition-all duration-300 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
                             >
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                                     <div>
@@ -366,19 +359,11 @@ export default function AchievementsPage() {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.3 }}
                                 variants={cardSpring}
-                                className="group rounded-2xl p-6 md:p-8 border border-black/[0.06] hover:border-blue-200 transition-all duration-300 overflow-hidden relative"
-                                style={{
-                                    background: "white",
-                                    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-                                }}
+                                className="group rounded-2xl p-6 md:p-8 border border-black/[0.06] hover:border-blue-200 transition-all duration-300 overflow-hidden relative bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
                             >
                                 {/* Accent glow on hover */}
                                 <div
-                                    className="absolute -top-8 -left-8 w-28 h-28 rounded-full opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500"
-                                    style={{
-                                        background: "var(--accent-blue)",
-                                        filter: "blur(30px)",
-                                    }}
+                                    className="absolute -top-8 -left-8 w-28 h-28 rounded-full opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500 bg-[var(--accent-blue)] blur-[30px]"
                                 />
 
                                 <div className="flex items-start gap-4">
@@ -408,11 +393,7 @@ export default function AchievementsPage() {
 
                                 {/* Accent bottom line on hover */}
                                 <div
-                                    className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                    style={{
-                                        background:
-                                            "linear-gradient(90deg, transparent 0%, var(--accent-blue) 30%, var(--accent-indigo) 70%, transparent 100%)",
-                                    }}
+                                    className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[linear-gradient(90deg,transparent_0%,var(--accent-blue)_30%,var(--accent-indigo)_70%,transparent_100%)]"
                                 />
                             </motion.div>
                         ))}

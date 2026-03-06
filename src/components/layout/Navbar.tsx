@@ -75,11 +75,9 @@ export default function Navbar() {
                 style={{ WebkitTapHighlightColor: 'transparent' }}
             >
                 <div
-                    className={`rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 select-none outline-none
-            backdrop-blur-2xl backdrop-saturate-150 border border-black/[0.06]
-            ${scrolled
-                            ? "bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.8)]"
-                            : "bg-white/60 shadow-[0_4px_16px_rgba(0,0,0,0.05)]"
+                    className={`rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 select-none outline-none backdrop-blur-2xl backdrop-saturate-150 border border-black/[0.06] ${scrolled
+                        ? "bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.8)]"
+                        : "bg-white/60 shadow-[0_4px_16px_rgba(0,0,0,0.05)]"
                         }`}
                     style={{ WebkitTapHighlightColor: 'transparent' }}
                 >
@@ -110,13 +108,7 @@ export default function Navbar() {
                                     {isActive && (
                                         <motion.div
                                             layoutId="nav-pill"
-                                            className="absolute inset-0 rounded-full"
-                                            style={{
-                                                background: "rgba(37,99,235,0.06)",
-                                                backdropFilter: "blur(8px)",
-                                                WebkitBackdropFilter: "blur(8px)",
-                                                border: "1px solid rgba(37,99,235,0.1)",
-                                            }}
+                                            className="absolute inset-0 rounded-full bg-[rgba(37,99,235,0.06)] backdrop-blur-[8px] border border-[rgba(37,99,235,0.1)]"
                                             transition={{ type: "spring", stiffness: 380, damping: 32 }}
                                         />
                                     )}
@@ -134,11 +126,7 @@ export default function Navbar() {
                                     {isActive && (
                                         <motion.div
                                             layoutId="nav-underline"
-                                            className="absolute -bottom-[1px] left-1/2 -translate-x-1/2 h-[2px] w-3/5 rounded-full"
-                                            style={{
-                                                background: "linear-gradient(90deg, transparent 0%, var(--accent-blue) 30%, var(--accent-indigo) 70%, transparent 100%)",
-                                                boxShadow: "0 0 10px 2px rgba(59,130,246,0.45), 0 2px 16px 0 rgba(99,102,241,0.25)",
-                                            }}
+                                            className="absolute -bottom-[1px] left-1/2 -translate-x-1/2 h-[2px] w-3/5 rounded-full bg-[linear-gradient(90deg,transparent_0%,var(--accent-blue)_30%,var(--accent-indigo)_70%,transparent_100%)] shadow-[0_0_10px_2px_rgba(59,130,246,0.45),0_2px_16px_0_rgba(99,102,241,0.25)]"
                                             transition={{ type: "spring", stiffness: 380, damping: 32 }}
                                         />
                                     )}

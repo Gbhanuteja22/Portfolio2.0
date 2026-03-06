@@ -289,8 +289,7 @@ export default function HomePage() {
 
               <Link
                 href="/achievements"
-                className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl text-sm font-medium
-                  bg-white/[0.06] border-2 border-blue-500/50 text-white/70 hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/80 transition-all ring-1 ring-white/10"
+                className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl text-sm font-medium bg-white/[0.06] border-2 border-blue-500/50 text-white/70 hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/80 transition-all ring-1 ring-white/10"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 Explore My Work
@@ -443,8 +442,7 @@ export default function HomePage() {
                   href="https://github.com/Gbhanuteja22"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 px-6 py-4 rounded-2xl border border-black/[0.06] bg-white
-                    hover:bg-blue-50 hover:border-blue-200 transition-all duration-300"
+                  className="group flex items-center gap-3 px-6 py-4 rounded-2xl border border-black/[0.06] bg-white hover:bg-blue-50 hover:border-blue-200 transition-all duration-300"
                   whileHover={{ y: -3 }}
                 >
                   <SiGithub className="text-2xl text-slate-400 group-hover:text-slate-800 transition-colors" />
@@ -476,9 +474,7 @@ export default function HomePage() {
               <motion.a
                 href="/Gummadavelli Bhanu Teja Resume.pdf"
                 download="Gummadavelli Bhanu Teja Resume"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold text-white
-                    bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700
-                    shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 mt-6"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 mt-6"
                 style={{ fontFamily: "var(--font-heading)" }}
                 whileHover={{ y: -3, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -519,8 +515,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-3 w-full">
                   <a
                     href="mailto:bhanutejagummadevelli@gmail.com"
-                    className="flex-1 flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-medium text-sm
-                      bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-blue-light)] transition-colors shadow-lg shadow-[var(--accent-blue)]/20"
+                    className="flex-1 flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-medium text-sm bg-[var(--accent-blue)] text-white hover:bg-[var(--accent-blue-light)] transition-colors shadow-lg shadow-[var(--accent-blue)]/20"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
                     <HiOutlineMail className="text-lg" />
@@ -529,8 +524,7 @@ export default function HomePage() {
                   </a>
                   <button
                     onClick={copyEmail}
-                    className="flex items-center justify-center w-12 h-12 rounded-xl
-                      bg-slate-50 border border-black/[0.08] text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer flex-shrink-0"
+                    className="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-50 border border-black/[0.08] text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer flex-shrink-0"
                     title="Copy email"
                   >
                     {copied ? (
