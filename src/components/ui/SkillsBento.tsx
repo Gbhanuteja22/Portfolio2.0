@@ -3,6 +3,7 @@
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { useRef } from "react";
+import { assetPath } from "@/lib/assetPath";
 
 interface SkillPill {
     label: string;
@@ -22,7 +23,7 @@ interface ToolboxCard {
 const cards: ToolboxCard[] = [
     {
         title: "Intelligence & Data Systems",
-        logo: "/logos/ai.svg",
+        logo: assetPath("/logos/ai.svg"),
         logoColor: "brightness(0) saturate(100%) invert(45%) sepia(90%) saturate(1500%) hue-rotate(220deg)",
         gradient: "linear-gradient(135deg, rgba(99,102,241,0.10) 0%, rgba(139,92,246,0.05) 100%)",
         borderGlow: "rgba(99,102,241,0.35)",
@@ -38,14 +39,14 @@ const cards: ToolboxCard[] = [
     },
     {
         title: "Full-Stack Architecture",
-        logo: "/logos/react.svg",
+        logo: assetPath("/logos/react.svg"),
         logoColor: "brightness(0) saturate(100%) invert(60%) sepia(80%) saturate(2000%) hue-rotate(175deg)",
         gradient: "linear-gradient(135deg, rgba(59,130,246,0.10) 0%, rgba(99,102,241,0.05) 100%)",
         borderGlow: "rgba(59,130,246,0.35)",
         skills: [
             { label: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", color: "#61DAFB" },
             { label: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", color: "#339933" },
-            { label: "Express.js", logo: "/logos/express.svg", color: "#ffffff" },
+            { label: "Express.js", logo: assetPath("/logos/express.svg"), color: "#ffffff" },
             { label: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg", color: "#47A248" },
             { label: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", color: "#E34F26" },
             { label: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", color: "#F7DF1E" },
@@ -59,7 +60,7 @@ const cards: ToolboxCard[] = [
         borderGlow: "rgba(16,185,129,0.35)",
         skills: [
             { label: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg", color: "#3776AB" },
-            { label: "Java", logo: "/logos/java.svg", color: "#ED8B00" },
+            { label: "Java", logo: assetPath("/logos/java.svg"), color: "#ED8B00" },
             { label: "SQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg", color: "#4479A1" },
             { label: "Azure", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg", color: "#0089D6" },
             { label: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", color: "#FF9900" },
@@ -69,7 +70,7 @@ const cards: ToolboxCard[] = [
     },
     {
         title: "Creative Prototyping",
-        logo: "/logos/design.svg",
+        logo: assetPath("/logos/design.svg"),
         logoColor: "brightness(0) saturate(100%) invert(50%) sepia(90%) saturate(2000%) hue-rotate(320deg)",
         gradient: "linear-gradient(135deg, rgba(244,63,94,0.10) 0%, rgba(251,146,60,0.05) 100%)",
         borderGlow: "rgba(244,63,94,0.35)",

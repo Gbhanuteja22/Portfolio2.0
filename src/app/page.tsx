@@ -7,6 +7,7 @@ import PhysicsIDCard from "@/components/hero/PhysicsIDCard";
 import DevGreeting from "@/components/hero/DevGreeting";
 import DesignerGreeting from "@/components/hero/DesignerGreeting";
 import ParticleBackground from "@/components/effects/ParticleBackground";
+import { assetPath } from "@/lib/assetPath";
 
 import LogoLoop from "@/components/ui/LogoLoop";
 import ProjectFolder from "@/components/ui/ProjectFolder";
@@ -57,7 +58,7 @@ const allSkillLogos = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg", alt: "Illustrator", title: "Illustrator" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/inkscape/inkscape-original-wordmark.svg", alt: "Inkscape", title: "Inkscape" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", alt: "JavaScript", title: "JavaScript" },
-  { src: "/logos/java.svg", alt: "Java", title: "Java" },
+  { src: assetPath("/logos/java.svg"), alt: "Java", title: "Java" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg", alt: "Jenkins", title: "Jenkins" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original-wordmark.svg", alt: "Jira", title: "Jira" },
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original-wordmark.svg", alt: "jQuery", title: "jQuery" },
@@ -472,7 +473,7 @@ export default function HomePage() {
 
               {/* Download Resume — premium styling */}
               <motion.a
-                href="/Gummadavelli Bhanu Teja Resume.pdf"
+                href={assetPath("/Gummadavelli Bhanu Teja Resume.pdf")}
                 download="Gummadavelli Bhanu Teja Resume"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 mt-6"
                 style={{ fontFamily: "var(--font-heading)" }}

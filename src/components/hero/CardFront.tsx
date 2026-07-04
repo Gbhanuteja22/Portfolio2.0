@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./CardFront.module.css";
+import { assetPath } from "@/lib/assetPath";
 
 export default function CardFront() {
     return (
@@ -15,7 +16,7 @@ export default function CardFront() {
                 <div className={styles.avatarWrapper}>
                     <div className={styles.avatarRing} />
                     <img
-                        src="/images/profilepic.png"
+                        src={assetPath("/images/profilepic.png")}
                         alt="Bhanu Teja"
                         className={styles.avatar}
                         onError={(e) => {
