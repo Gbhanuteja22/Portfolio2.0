@@ -5,15 +5,16 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const experiences = [
     {
-        title: "Salesforce Virtual Internship",
-        role: "Virtual Intern",
-        period: "2024",
+        title: "Johnson Controls India Pvt. Ltd.",
+        role: "Graduate Engineer Trainee",
+        period: "2025 – Present",
         description:
-            "Gained hands-on experience with Salesforce platform development, including Apex programming, Lightning Web Components, and CRM customization. Completed real-world projects involving workflow automation and data management.",
-        skills: ["Salesforce", "Apex", "LWC", "CRM"],
+            "Working as a Graduate Engineer Trainee at Johnson Controls, contributing to engineering initiatives and technology-driven solutions. Gaining hands-on exposure to enterprise-scale systems, cross-functional collaboration, and industry best practices in a global organization.",
+        skills: ["Engineering", "Enterprise Systems", "Cross-functional Teams", "Technology"],
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
             </svg>
         ),
     },

@@ -26,12 +26,12 @@ const experiences = [
         ],
     },
     {
-        role: "Enterprise CRM Developer (Virtual Intern)",
-        company: "Salesforce",
-        active: false,
+        role: "Graduate Engineer Trainee",
+        company: "Johnson Controls India Pvt. Ltd.",
+        active: true,
         impact: [
-            "Architected 10+ scalable workflows leveraging Apex, Lightning Components, and Flow for complex enterprise CRM environments.",
-            "Engineered automation for critical lifecycle tasks, significantly reducing manual overhead and boosting record-handling efficiency.",
+            "Contributing to engineering initiatives and technology-driven solutions at a global enterprise scale.",
+            "Gaining hands-on exposure to enterprise systems, cross-functional collaboration, and industry best practices.",
         ],
     },
 ];
