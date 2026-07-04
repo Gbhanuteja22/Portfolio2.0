@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, createContext, useContext } from "react";
-import { assetPath } from "@/lib/assetPath";
 import {
     CommandDialog,
     CommandInput,
@@ -129,7 +128,7 @@ export function CommandPaletteDialog() {
             switch (action) {
                 case "resume": {
                     const a = document.createElement("a");
-                    a.href = assetPath("/Gummadavelli Bhanu Teja Resume.pdf");
+                    a.href = "/Gummadavelli Bhanu Teja Resume.pdf";
                     a.download = "Gummadavelli Bhanu Teja Resume";
                     a.click();
                     break;
