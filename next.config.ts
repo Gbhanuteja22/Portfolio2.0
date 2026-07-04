@@ -1,8 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* ── Static export for GitHub Pages ── */
+  output: "export",
+
+  /* ── Sub-path for GitHub Pages (repo name) ── */
+  basePath: "/Portfolio2.0",
+  assetPrefix: "/Portfolio2.0",
+
   /* ── Image optimization: allow external CDN logos ── */
   images: {
+    unoptimized: true, // required for static export
     remotePatterns: [
       {
         protocol: "https",
@@ -23,6 +31,7 @@ const nextConfig: NextConfig = {
   },
 
   /* ── Aggressive caching for static assets on Edge CDN ── */
+  /* NOTE: headers() is ignored in static export mode but kept for Vercel/Node deployments */
   async headers() {
     return [
       {
