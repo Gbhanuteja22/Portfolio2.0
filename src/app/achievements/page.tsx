@@ -8,6 +8,15 @@ import CodingProfile from "@/components/ui/CodingProfile";
 /* ── Experience Data ── */
 const experiences = [
     {
+        role: "Graduate Engineer Trainee",
+        company: "Johnson Controls India Pvt. Ltd.",
+        active: true,
+        impact: [
+            "Contributing to engineering initiatives and technology-driven solutions at a global enterprise scale.",
+            "Gaining hands-on exposure to enterprise systems, cross-functional collaboration, and industry best practices.",
+        ],
+    },
+    {
         role: "IT Intern (TOC)",
         company: "Johnson Controls India Pvt. Ltd.",
         active: true,
@@ -23,15 +32,6 @@ const experiences = [
         impact: [
             "Developed an 'Image To Text Generation And Analysis Platform' during the internship tenure.",
             "Successfully completed the project by demonstrating the functional working model directly to HCLTech Subject Matter Experts (SMEs).",
-        ],
-    },
-    {
-        role: "Graduate Engineer Trainee",
-        company: "Johnson Controls India Pvt. Ltd.",
-        active: true,
-        impact: [
-            "Contributing to engineering initiatives and technology-driven solutions at a global enterprise scale.",
-            "Gaining hands-on exposure to enterprise systems, cross-functional collaboration, and industry best practices.",
         ],
     },
 ];
