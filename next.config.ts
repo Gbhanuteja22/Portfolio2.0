@@ -1,12 +1,14 @@
 import type { NextConfig } from "next";
 
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+
 const nextConfig: NextConfig = {
   /* ── Static export for GitHub Pages ── */
   output: "export",
 
-  /* ── Sub-path for GitHub Pages (repo name) ── */
-  basePath: "/Portfolio2.0",
-  assetPrefix: "/Portfolio2.0",
+  /* ── Sub-path only on GitHub Pages, not local dev ── */
+  basePath: isGithubActions ? "/Portfolio2.0" : "",
+  assetPrefix: isGithubActions ? "/Portfolio2.0" : "",
 
   /* ── Image optimization: allow external CDN logos ── */
   images: {

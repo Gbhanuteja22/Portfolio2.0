@@ -19,7 +19,7 @@ const experiences = [
     {
         role: "IT Intern (TOC)",
         company: "Johnson Controls India Pvt. Ltd.",
-        active: true,
+        active: false,
         impact: [
             "Actively contributing to the Technical Operations Center, streamlining infrastructure, and optimizing enterprise-level technical workflows.",
             "Supporting real-time monitoring and resolution of critical system operations across distributed environments.",
@@ -41,7 +41,7 @@ const education = [
     {
         degree: "Bachelor of Technology (B.Tech)",
         institution: "Mahatma Gandhi Institute of Technology (MGIT)",
-        metrics: "8.93/10 CGPA",
+        metrics: "8.94/10 CGPA",
         focus:
             "Cultivated a strong foundation in computer science, algorithms, and scalable software engineering.",
     },
@@ -206,7 +206,7 @@ export default function AchievementsPage() {
                         <div className="space-y-10">
                             {experiences.map((exp, i) => (
                                 <motion.div
-                                    key={exp.company}
+                                    key={`${exp.role}-${exp.company}`}
                                     custom={i}
                                     initial="hidden"
                                     whileInView="visible"
